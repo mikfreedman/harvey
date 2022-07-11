@@ -28,11 +28,12 @@ func (s *Strip) Run() error {
 	operation.StripFrontMatter(s.Input, multi)
 
 	if s.InPlace {
-		s.Input.Close()
 		f, err := s.Input.Stat()
 		if err != nil {
 			log.Fatal(err)
 		}
+
+		s.Input.Close()
 		os.WriteFile(s.Input.Name(), a.Bytes(), f.Mode())
 	}
 	return nil
