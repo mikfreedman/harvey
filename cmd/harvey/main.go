@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
-	"os"
 
 	"github.com/alecthomas/kong"
 	"github.com/mikfreedman/harvey/command"
@@ -35,7 +33,6 @@ func main() {
 			Compact: true,
 		}),
 	)
-	ctx.BindTo(os.Stdout, (*io.Writer)(nil))
 	err := ctx.Run()
 	ctx.FatalIfErrorf(err)
 }
