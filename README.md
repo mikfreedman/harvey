@@ -14,3 +14,9 @@ brew install harvey
 ```
 
 See [detailed instructions](docs/installation.md) for more options
+
+## Usage
+
+```bash
+harvey strip file.md > out.md
+```
